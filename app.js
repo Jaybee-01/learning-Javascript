@@ -1770,22 +1770,225 @@
 // console.log("You have reach the end");
 
 // example 2
+// try {
+//   const dividend = window.prompt("Enter dividend here:");
+//   const divisor = window.prompt("Enter divisor here: ");
 
-try {
-  const dividend = Number(prompt("Enter a dividend: "));
-  const divisor = Number(prompt("Enter a divisor: "));
+//   if (divisor == "0") {
+//     throw new Error("Divisor can't be zero");
+//   }
+//   const result = dividend / divisor;
+//   console.leg(result);
+// } catch (error) {
+//   console.log(error);
+// } finally {
+//   console.log("This will always execute");
+// }
 
-  if (divisor == 0) {
-    throw new Error("You can divide by zero");
-  }
-if(isNaN(dividend) || isNaN(divisor)){
-  throw new Error("Values must be a number");
-  
-}
-  const result = dividend / divisor;
-  console.log(result);
-} catch (error) {
-  console.error(error);
-}
+// console.log("This is the end of the program.");
 
-console.log("You have reached the end");
+// 3rd August 2025
+// calculator program
+// 8:09
+// DOM - document object model: object{}that represents the page you see in the web brower and provides you with an API to interact with it. web browser constructs the DOM when it loads an HTML document, and structure all the elements in a tree-like representation. Javascript can access the DOM to dynamically change the content, structure and style of a web page
+
+// example
+// document.title = "My website"
+// document.body.style.background = 'black'
+// console.dir(document);
+
+// example
+// const username = "Jaybee";
+// const welcomeMsg = document.getElementById("welcome-msg");
+// welcomeMsg.textContent += username === "" ? "Guest" : username;
+
+// Element selectors: Methods used to target and manipulate HTML elements by using this methods they allow you to select one or multiple HTML elements from the DOM(document object model)
+
+// 1. document.getElementById()  //ELEMENT OR NULL
+// 2. document.getElementsByClassName() //HTML COLLECTION
+// 2. document.getElementsByTagName() //HTML COLLECTION
+// 2. document.querySelector() //ELEMENT OR NULL
+// 2. document.querySelectorAll() //NODELIST
+
+// // by id
+// const myHeading = document.getElementById("myHeading");
+// myHeading.style.backgroundColor = 'yellow'
+// myHeading.style.textAlign = 'center'
+// console.log(myHeading);
+
+// by class name
+// const fruits = document.getElementsByClassName("fruits");
+// fruits[2].style.backgroundColor = "yellow";
+
+// iterate over them and add a color
+// for (let fruit of fruits) {
+//   fruit.style.backgroundColor = "red";
+// }
+
+//NB: html collections dont have a builtin foreach method, html collections do a alot of live update but unfortunate they have a limited amount of utility method.
+// eg using fruits.forEach() - dont have it
+
+// you can typecast it as array
+// Array.from(fruits).forEach((fruit) => {
+//   fruit.style.backgroundColor = "yellow";
+// });
+
+// console.log(fruits);
+
+// by tagName
+// const h4Elements = document.getElementsByTagName("h4");
+// const liElements = document.getElementsByTagName("li");
+
+// h4Elements[0].style.backgroundColor = 'yellow'
+// h4Elements.[1].style.backgroundColor = 'yellow'
+// console.log(h4Elements);
+
+// for (const h4Element of h4Elements) {
+//   h4Element.style.backgroundColor = "yellow";
+// }
+// for(let liElement of liElements){
+//   liElement.style.backgroundColor = 'lightgreen'
+// }
+// Array.from(h4Elements).forEach(h4Element => {
+//   h4Element.style.backgroundColor = 'yellow'
+// })
+// Array.from(liElements).forEach(liElement => {
+//   liElement.style.backgroundColor = 'lightgreen'
+// })
+
+// Query selector - select the first matching elements or null
+// const element = document.querySelector("ul");
+
+// console.log(element);
+
+// element.style.backgroundColor = "red";
+// console.log('jaybee');
+
+// query selector all
+
+// const foods = document.querySelectorAll(".fruits");
+
+// foods[0].style.backgroundColor = 'yellow'
+// foods[2].style.backgroundColor = 'yellow'
+
+// console.log(foods);
+
+// // you dont need to typecast as array cause it has a foreach built in method
+
+// foods.forEach(food => {
+//   food.style.backgroundColor = 'red'
+// })
+
+// 4th August 25
+// DOM navigation in JS - the process of navigating through the structure of an HTML document using Javascript
+
+// .firstElementChild
+// .lastElementChild
+// .nextElementSibling
+// .previousElementSibling
+// .parentElement
+// .children
+
+//............ .firstElementChild................
+// const element = document.getElementById('fruits')
+// const firstChild = element.firstElementChild;
+// firstChild.style.backgroundColor = 'yellow'
+
+// const ulElements = document.querySelectorAll("ul");
+
+// ulElements.forEach((ulElement) => {
+//   const firstChild = ulElement.firstElementChild;
+//   firstChild.style.backgroundColor = "red";
+// });
+
+//............ .lastElementChild................
+// const element = document.getElementById("desserts");
+// const lastChild = element.lastElementChild;
+// lastChild.style.backgroundColor = "green";
+
+// const ulElements = document.querySelectorAll("ul");
+// ulElements.forEach((ulElement) => {
+//   const lastChild = ulElement.lastElementChild;
+//   lastChild.style.backgroundColor = "green";
+//   console.log(lastChild);
+// });
+
+//............ .nextElementSibling................
+// const element = document.getElementById('vegetables')
+// const nextElement = element.nextElementSibling;
+// nextElement.style.backgroundColor = 'red'
+
+//............ .previousElementSibling................
+// const element = document.getElementById('vegetables')
+// const prevSibling = element.previousElementSibling;
+// prevSibling.style.backgroundColor = 'tomato';
+
+//............ .parentElement................
+// const element = document.getElementById('apple')
+// const parent = element.parentElement;
+// parent.style.backgroundColor = 'red'
+
+//............ .children................
+// const element = document.getElementById('vegetables')
+// const children = element.children;
+
+// Array.from(children).forEach(child => {
+//   child.style.backgroundColor = 'green';
+// })
+
+// children[1].style.backgroundColor = 'red'
+
+// 8th August 2025
+// HOW TO ADD AND CHANGE HTML ELEMENT USING JAVASCRIPT
+
+// step 1: Create Eement
+// const newH1 = document.createElement("h1"); //.createElement()
+
+// step 2: Add attributes/properties
+// newH1.textContent = "I like pizza";
+// newH1.id = 'myH1'
+// newH1.style.color = 'tomato'
+// newH1.style.textAlign = 'center'
+
+// step 3: Append element to DOM    //prepend()...
+// document.body.append(newH1);
+// document.body.prepend(newH1); //to be the first child
+
+// document.getElementById('box1').append(newH1);
+// document.getElementById('box1').prepend(newH1);
+
+// const box2 = document.getElementById('box2');
+// document.body.insertBefore(newH1, box2)  //insertBefore
+
+// const boxes = document.querySelectorAll('.box');
+// document.body.insertBefore(newH1, boxes[2])  //insertBefore
+
+// Remove HTML element
+// document.getElementById('box1').removeChild(newH1);
+
+// example 2
+// const newListItem = document.createElement("li");
+
+// newListItem.textContent = "coconut";
+// newListItem.id = "coconut";
+// newListItem.style.fontWeight = "bold";
+// newListItem.style.backgroundColor = "lightgreen";
+
+// appending and prepending
+// document.body.append(newListItem);
+// document.getElementById("fruits").append(newListItem);
+// document.getElementById("fruits").prepend(newListItem);
+
+// // inserting before...........
+// const apple = document.getElementById("apple");
+// document.getElementById('fruits').insertBefore(newListItem, apple)
+
+// if they dont have ids
+// const fruit = document.querySelectorAll('#fruits li')
+// document.getElementById('fruits').insertBefore(newListItem, fruit[3])
+
+// // removing it - .removeChild()
+// document.body.removeChild(newListItem);
+// document.getElementById("fruits").removeChild(newListItem);
+
+// Mouse Event:
